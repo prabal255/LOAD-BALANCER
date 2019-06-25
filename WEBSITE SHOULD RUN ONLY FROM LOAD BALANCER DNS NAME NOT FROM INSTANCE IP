@@ -1,0 +1,38 @@
+IN THIS WE WILL SEE HOW TO UPLOAD WEBSITE
+
+##firstly we will install httpd
+yum install httpd
+
+now we will go and make website in
+cd /var/www/html
+
+we will make our website in this with the help of
+vi index.html
+
+simply paste or make your code save this by pressing esc and
+:wq
+
+come back and den start the httpd service by
+systemctl start httpd
+systemctl enable httpd
+systemctl status httpd
+
+now we will go into instance security group and change the security grp
+add http, https and change custom to anywhere
+copy the instance ip and paste in the url
+USE OF LOAD BALANCER
+
+now make the same instance again and do the following task again
+#make the load balancer add both of these two instances and wait untill the 2 of 2 instances apper
+#go into the security group settings and then change all traffic setting to anywhere
+#copy the dns name and then copy this into the url on clicking f5 you will see the changes
+
+NOW WEBSITE SHOULD RUN ONLY FROM LOAD BALANCER DNS NAME NOT FROM INSTANCE IP
+
+##GO TO THE VPC IN LOAD BALANCER COPY THE INSTANCE IP
+
+##NOW AGAIN GO TO THE INSTANCE SECURITY GROUP AND CHANGE THE HTTP AND HTTPS TO CUSTOM PASTE THE
+#VPC IP INTO IT
+#NOW YOU CAN CHECK WITH PUBLIC DNS OF LOAD BALANCER AND IP
+#TASK COMPLETED
+
